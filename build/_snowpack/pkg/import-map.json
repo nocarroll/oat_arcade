@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "classnames": "./classnames.js",
+    "object-assign": "./object-assign.js",
+    "react": "./react.js",
+    "react-dom": "./react-dom.js",
+    "scheduler": "./scheduler.js",
+    "scheduler/tracing": "./scheduler/tracing.js"
+  }
+}

@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: "Press Start 2P", cursive;
+  font-weight: 300;
+  background: repeating-linear-gradient(to bottom, #0f0a1e, #0f0a1e 2px, #140e29 2px, #140e29 4px);
+  color: white;
+  letter-spacing: 5px;
+  text-shadow: -2px 0 0 #fdff2a, -4px 0 0 #df4a42, 2px 0 0 #91fcfe, 4px 0 0 #4405fc;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.modal .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(240, 240, 240, 0.6);
+}
+.modal .dialog {
+  color: #333;
+  background: white;
+  padding: 1em;
+  width: 50vw;
+  border: 3px solid black;
+  position: fixed;
+  top: 10vh;
+  margin: auto;
+  text-shadow: none;
+}
+.modal .dialog header {
+  color: #4405fc;
+  font-size: 1.5em;
+}
+
+#score {
+  text-align: center;
+}
+
+#game {
+  font-size: 28px;
+  width: 70vh;
+  height: 70vh;
+  margin: auto;
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  border: 1px solid #333;
+}
+#game.is-startup .is-food > span, #game.is-startup .is-wall > span, #game.is-startup .is-player > span {
+  opacity: 0;
+}
+#game.is-game-over {
+  background-color: black;
+}
+#game.is-game-over .is-food > span {
+  opacity: 0;
+}
+
+.game-board-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.game-board-row:not(:last-child) {
+  border-bottom: 1px dashed #333;
+}
+
+.game-board-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-board-cell:not(:last-child) {
+  border-right: 1px dashed #333;
+}
+
+.is-player > span {
+  transform: scale(1.5);
+}
+
+.is-food > span {
+  transform-origin: center;
+  transition: opacity 0.4s ease;
+  animation: foodAnimation 2s infinite linear;
+}
+
+#info {
+  font-size: 14px;
+  text-align: center;
+  opacity: 0.7;
+  padding: 0.5em;
+}
+
+@keyframes foodAnimation {
+  0% {
+    transform: scale(0.9) rotate(-4deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(6deg);
+  }
+  100% {
+    transform: scale(0.9) rotate(-4deg);
+  }
+}

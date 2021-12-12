@@ -1,0 +1,21 @@
+{
+  "name": "oat_arcade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "author": "Neil O'Carroll",
+  "license": "ISC",
+  "devDependencies": {
+    "snowpack": "3.8.8"
+  },
+  "dependencies": {
+    "@snowpack/plugin-sass": "1.4.0",
+    "classnames": "2.3.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  }
+}
